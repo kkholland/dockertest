@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  IMAGE_NAME: web
+  IMAGE_NAME: docker-test
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: build
-          path: dist/actions/
+          path: dist/docker-test/
 
       - name: Build image
         run: docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY/$IMAGE_NAME:$GITHUB_SHA .
